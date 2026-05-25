@@ -286,10 +286,10 @@ footer a:hover{color:var(--clay)}
           <a class="btn btn-ghost" href="#visita">Cómo llegar</a>
         </div>
         <div class="hero-meta">
-          <div><div class="meta-num">10<sup>+</sup></div><div class="meta-lbl">Años en Roma Norte</div></div>
-          <div><div class="meta-num">3</div><div class="meta-lbl">Estados de origen</div></div>
+          <div><div class="meta-num">7</div><div class="meta-lbl">Cafés esta temporada</div></div>
+          <div><div class="meta-num">3</div><div class="meta-lbl">Estados · Veracruz · Puebla · Chiapas</div></div>
           <div><div class="meta-num">100%</div><div class="meta-lbl">Café mexicano</div></div>
-          <div><div class="meta-num">In-house</div><div class="meta-lbl">Tostado propio</div></div>
+          <div><div class="meta-num">Semanal</div><div class="meta-lbl">Tueste propio</div></div>
         </div>
       </div>
       <div class="hero-visual">
@@ -393,27 +393,27 @@ footer a:hover{color:var(--clay)}
       </div>
 
       <div class="menu-card">
-        <span class="tag">Para casa</span>
+        <span class="tag">Para casa · Tueste semanal</span>
         <h3>Café en grano</h3>
-        <p class="lead">Llévate el café del día a tu casa. Tostado fresco, molemos al gusto o entregamos en grano entero. 250g por bolsa.</p>
+        <p class="lead">Llévate el catálogo del mes a tu casa. Tostado fresco semanalmente. Tres tiers según presupuesto y curiosidad — desde Línea Origen hasta Microlotes de edición limitada.</p>
         <ul>
           <li>
-            <div><b>Origen Chiapas</b><small>Altos de Chiapas · 1,500 msnm</small></div>
+            <div><b>Línea Origen</b><small>250g · entry tier · cafés base</small></div>
             <div class="dots"></div>
-            <div class="price">$280</div>
+            <div class="price">$200</div>
           </li>
           <li>
-            <div><b>Origen Oaxaca</b><small>Sierra Mazateca · 1,700 msnm</small></div>
+            <div><b>Selección de la Casa</b><small>250g · cafés firma · Finca Santolí, Mazama</small></div>
             <div class="dots"></div>
-            <div class="price">$310</div>
+            <div class="price">$250</div>
           </li>
           <li>
-            <div><b>Origen Veracruz</b><small>Coatepec · 1,300 msnm</small></div>
+            <div><b>Microlote Geisha ★</b><small>200g · premium · Chiapas · La Concordia</small></div>
             <div class="dots"></div>
-            <div class="price">$260</div>
+            <div class="price">$450</div>
           </li>
         </ul>
-        <div class="note">Molienda según método: V60, espresso, prensa francesa</div>
+        <div class="note">Ver catálogo completo Abril-Mayo 2026 ↓</div>
       </div>
 
       <div class="menu-card">
@@ -444,59 +444,210 @@ footer a:hover{color:var(--clay)}
   </div>
 </section>
 
-<!-- Orígenes -->
-<section class="section origenes" id="origenes">
+<!-- Catálogo del mes -->
+<style>
+.catalogo .section-head h2{color:#fff}
+.catalogo .section-head h2 em{color:var(--clay)}
+.catalogo .section-head p{color:rgba(251,246,236,.7)}
+.catalogo .eyebrow{color:var(--clay)}
+.cat-meta{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.16)}
+.cat-meta-block{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,246,236,.65);font-weight:500}
+.cat-meta-block b{display:block;font-family:'Fraunces';font-style:italic;font-size:24px;color:var(--clay);font-weight:500;letter-spacing:-.012em;line-height:1;margin-bottom:6px}
+.tier{margin-bottom:60px}
+.tier:last-child{margin-bottom:0}
+.tier-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px;padding-bottom:16px;border-bottom:2px solid rgba(199,148,116,.4);flex-wrap:wrap}
+.tier-title{font-family:'Fraunces';font-size:30px;font-weight:500;letter-spacing:-.012em;color:#fff;font-style:italic;display:flex;align-items:center;gap:18px}
+.tier-title .badge{font-family:'JetBrains Mono';font-style:normal;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--coffee-dark);background:var(--clay);padding:6px 12px;font-weight:700}
+.tier-title .badge.gold{background:var(--brass-soft);color:var(--coffee-dark)}
+.tier-title .badge.dark{background:rgba(255,255,255,.06);color:var(--clay);border:1px solid rgba(199,148,116,.4)}
+.tier-price{font-family:'Fraunces';font-style:italic;font-size:18px;color:var(--clay);font-weight:500;letter-spacing:-.005em}
+.tier-price small{font-family:'JetBrains Mono';font-size:10px;color:rgba(251,246,236,.55);font-style:normal;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:4px}
+.coffees{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.coffees.single{grid-template-columns:1fr;max-width:680px}
+.coffee{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);padding:30px 28px;transition:.25s;backdrop-filter:blur(6px)}
+.coffee:hover{transform:translateY(-3px);border-color:rgba(199,148,116,.5);background:rgba(255,255,255,.06)}
+.coffee-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px}
+.coffee h4{font-family:'Fraunces';font-size:24px;font-weight:500;letter-spacing:-.012em;color:#fff;line-height:1.15;font-style:italic;flex:1}
+.coffee h4 small{display:block;font-family:'JetBrains Mono';font-style:normal;font-size:10px;color:rgba(251,246,236,.55);letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:4px}
+.coffee .lot{font-family:'JetBrains Mono';font-size:9.5px;padding:5px 10px;background:rgba(199,148,116,.18);color:var(--clay);letter-spacing:.16em;text-transform:uppercase;font-weight:600;border:1px solid rgba(199,148,116,.35);white-space:nowrap;align-self:flex-start}
+.coffee-data{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-bottom:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+.coffee-data div{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em}
+.coffee-data span{color:rgba(251,246,236,.5);text-transform:uppercase;display:block;margin-bottom:3px;font-weight:500}
+.coffee-data b{font-family:'Fraunces';font-style:italic;font-size:15px;color:var(--clay);font-weight:500;letter-spacing:-.005em}
+.coffee-notes{padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+.coffee-notes .nlabel{font-family:'JetBrains Mono';font-size:9.5px;color:rgba(251,246,236,.55);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin-bottom:10px;display:block}
+.coffee-notes .tags{display:flex;flex-wrap:wrap;gap:6px}
+.coffee-notes .tags span{font-family:'Inter';font-size:11.5px;padding:5px 11px;background:rgba(199,148,116,.12);color:var(--clay);border-radius:999px;border:1px solid rgba(199,148,116,.22);font-weight:500;letter-spacing:.02em}
+.coffee-price{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.coffee-price .single-price{font-family:'Fraunces';font-style:italic;font-size:24px;color:var(--clay);font-weight:600;letter-spacing:-.012em;line-height:1}
+.coffee-price .single-price small{font-family:'JetBrains Mono';font-size:10px;color:rgba(251,246,236,.55);font-style:normal;letter-spacing:.12em;margin-left:4px;text-transform:uppercase}
+@media (max-width:768px){.coffees{grid-template-columns:1fr}.tier-head{flex-direction:column;align-items:flex-start}.coffee-data{grid-template-columns:1fr 1fr}}
+</style>
+<section class="section origenes catalogo" id="origenes">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Orígenes · Productores</span>
-      <h2>Tres estados, <em>tres historias</em>.</h2>
-      <p>Trabajamos directo con productores en Chiapas, Oaxaca y Veracruz. Visitamos las fincas, cuppearemos los lotes y compramos a precio justo — varias veces por encima del mercado base.</p>
+      <span class="eyebrow">Catálogo · Tueste semanal</span>
+      <h2>El café que estamos tostando <em>esta temporada</em>.</h2>
+      <p>Catálogo Abril–Mayo 2026. Siete cafés organizados en tres tiers — desde nuestra Línea Origen accesible hasta microlotes premium como el Geisha de Chiapas. Cada lote tostado fresco esta semana.</p>
     </div>
-    <div class="orig-grid">
 
-      <div class="orig-card">
-        <div class="country">
-          <h3>Chiapas</h3>
-          <span class="stamp">Altos</span>
-        </div>
-        <p>Cafés de altura cultivados por familias indígenas tsotsiles en los Altos de Chiapas. Perfil con cuerpo medio, dulzura natural y notas a cacao y nueces.</p>
-        <div class="data">
-          <div><span>Altitud</span><b>1,500 m</b></div>
-          <div><span>Varietal</span><b>Typica · Bourbon</b></div>
-          <div><span>Proceso</span><b>Lavado</b></div>
-          <div><span>Tueste</span><b>Medio</b></div>
-        </div>
-      </div>
-
-      <div class="orig-card">
-        <div class="country">
-          <h3>Oaxaca</h3>
-          <span class="stamp">Mazateca</span>
-        </div>
-        <p>Cafés de la Sierra Mazateca, cultivados a sombra natural. Lotes pequeños con perfil floral muy marcado — flores blancas, jazmín y final cítrico.</p>
-        <div class="data">
-          <div><span>Altitud</span><b>1,700 m</b></div>
-          <div><span>Varietal</span><b>Marsellesa</b></div>
-          <div><span>Proceso</span><b>Honey</b></div>
-          <div><span>Tueste</span><b>Medio-claro</b></div>
-        </div>
-      </div>
-
-      <div class="orig-card">
-        <div class="country">
-          <h3>Veracruz</h3>
-          <span class="stamp">Coatepec</span>
-        </div>
-        <p>El clásico mexicano. Cafés balanceados de Coatepec — la tradición cafetera del país. Cuerpo redondo, acidez suave y notas a chocolate amargo.</p>
-        <div class="data">
-          <div><span>Altitud</span><b>1,300 m</b></div>
-          <div><span>Varietal</span><b>Bourbon · Caturra</b></div>
-          <div><span>Proceso</span><b>Lavado</b></div>
-          <div><span>Tueste</span><b>Medio</b></div>
-        </div>
-      </div>
-
+    <div class="cat-meta">
+      <div class="cat-meta-block"><b>Abril – Mayo 2026</b>Temporada actual · tueste semanal</div>
+      <div class="cat-meta-block" style="text-align:right"><b>7 cafés · 3 tiers</b>Veracruz · Puebla · Chiapas</div>
     </div>
+
+    <!-- Línea Origen -->
+    <div class="tier">
+      <div class="tier-head">
+        <div class="tier-title">Línea Origen <span class="badge dark">i / Entry</span></div>
+        <div class="tier-price">KG $440 · 454g $265 · 250g $200<small>Por bolsa según presentación</small></div>
+      </div>
+      <div class="coffees">
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>César Hernández<small>Cosautlán de Carvajal · Veracruz</small></h4>
+            <span class="lot">1,100 msnm</span>
+          </div>
+          <div class="coffee-data">
+            <div><span>Proceso</span><b>Lavado</b></div>
+            <div><span>Variedad</span><b>Typica · Anacafé 14 · Garnica</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata</span>
+            <div class="tags"><span>Avellanada</span><span>Chocolate</span><span>Nuez</span><span>Cítrico</span></div>
+          </div>
+        </div>
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>Finca Don Onesimo<small>Tere y Jesús Valdez · Cuauxinca, Puebla</small></h4>
+            <span class="lot">1,550 msnm</span>
+          </div>
+          <div class="coffee-data">
+            <div><span>Proceso</span><b>Lavado</b></div>
+            <div><span>Varietal</span><b>Catimor</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Origen</span>
+            <div class="tags"><span>Huauchinango</span><span>Sierra norte de Puebla</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Selección de la Casa -->
+    <div class="tier">
+      <div class="tier-head">
+        <div class="tier-title">Selección de la Casa <span class="badge">ii / House</span></div>
+        <div class="tier-price">KG $540 · 500g $365 · 250g $250<small>Por bolsa según presentación</small></div>
+      </div>
+      <div class="coffees">
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>Finca Santolí<small>Teocelo · Veracruz</small></h4>
+            <span class="lot">1,250 msnm</span>
+          </div>
+          <div class="coffee-data">
+            <div><span>Proceso</span><b>Lavado</b></div>
+            <div><span>Variedad</span><b>Anacafé 14</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata · Especiado</span>
+            <div class="tags"><span>Mascabado</span><span>Miel</span><span>Grosella</span><span>Toronja</span></div>
+          </div>
+        </div>
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>Mazama<small>Hutzilan de Serdán · Puebla</small></h4>
+            <span class="lot">1,100 msnm</span>
+          </div>
+          <div class="coffee-data">
+            <div><span>Proceso</span><b>Lavado tradicional</b></div>
+            <div><span>Variedad</span><b>Marsellesa</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata</span>
+            <div class="tags"><span>Chocolate</span><span>Miel</span><span>Toronja</span><span>Mantequilla</span><span>Caramelo</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Microlotes -->
+    <div class="tier">
+      <div class="tier-head">
+        <div class="tier-title">Microlotes 🥇 <span class="badge gold">iii / Premium</span></div>
+        <div class="tier-price">200g · precio individual<small>Producción extremadamente limitada</small></div>
+      </div>
+      <div class="coffees" style="grid-template-columns:repeat(3,1fr);gap:16px">
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>Fernando Lara<small>Teocelo · Veracruz</small></h4>
+          </div>
+          <div class="coffee-data">
+            <div><span>Altitud</span><b>1,250 m</b></div>
+            <div><span>Proceso</span><b>Honey</b></div>
+            <div><span>Variedad</span><b>Marsellesa</b></div>
+            <div><span>Presentación</span><b>200g</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata</span>
+            <div class="tags"><span>Miel</span><span>Naranja</span><span>Limón</span><span>Azúcar</span><span>Zacate limón</span></div>
+          </div>
+          <div class="coffee-price">
+            <div class="single-price">$300<small>MXN</small></div>
+          </div>
+        </div>
+
+        <div class="coffee">
+          <div class="coffee-head">
+            <h4>Finca Ocoteno<small>Miguel Ronquillo Aco · Totutla, Puebla</small></h4>
+          </div>
+          <div class="coffee-data">
+            <div><span>Altitud</span><b>1,100 m</b></div>
+            <div><span>Proceso</span><b>Semi lavado</b></div>
+            <div><span>Variedad</span><b>Marsellesa</b></div>
+            <div><span>Presentación</span><b>200g</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata</span>
+            <div class="tags"><span>Caramelo</span><span>Almendra</span><span>Avellana</span><span>Yogurt</span><span>Mantequilla</span><span>Lima</span></div>
+          </div>
+          <div class="coffee-price">
+            <div class="single-price">$300<small>MXN</small></div>
+          </div>
+        </div>
+
+        <div class="coffee" style="border-color:var(--brass-soft);background:rgba(212,183,116,.06)">
+          <div class="coffee-head">
+            <h4>Finca Santa Cruz<small>Familia Arguello · La Concordia, Chiapas</small></h4>
+            <span class="lot" style="background:var(--brass-soft);color:var(--coffee-dark);border-color:var(--brass)">★ Geisha</span>
+          </div>
+          <div class="coffee-data">
+            <div><span>Altitud</span><b>1,400 m</b></div>
+            <div><span>Proceso</span><b>Lavado</b></div>
+            <div><span>Varietal</span><b>Geisha</b></div>
+            <div><span>Lote</span><b>SC-0110</b></div>
+          </div>
+          <div class="coffee-notes">
+            <span class="nlabel">Notas de cata · Premium floral</span>
+            <div class="tags"><span>Jazmín</span><span>Azahar</span><span>Mandarina</span><span>Mantequilla</span><span>Limón amarillo</span><span>Cítrico</span></div>
+          </div>
+          <div class="coffee-price">
+            <div class="single-price" style="color:var(--brass-soft)">$450<small>MXN</small></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:48px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,246,236,.55);font-weight:500">Catálogo se renueva cada temporada · Próximo: junio – julio 2026</p>
   </div>
 </section>
 
